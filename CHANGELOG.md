@@ -11,7 +11,8 @@ The table below shows which release corresponds to each branch, and what date th
 | ---------------- | -------- | ---------------------- |
 | [5.0.0](#500-dev)  | `dev`    |
 | [4.15.0](#4150-beta)  | `beta`   |
-| [4.14.0](#4140-stable)  | `stable` | Jan 15, 2025
+| [4.14.0](#4141-stable)  | `stable` | Mar 24, 2025
+| [4.14.0](#4140)  |          | Jan 15, 2025
 | [4.13.1](#4131)  |          | Sep 29, 2024
 | [4.13.0](#4130)  |          | Aug 12, 2024
 | [4.12.0](#4120)  |          | Feb 22, 2024
@@ -145,6 +146,7 @@ The table below shows which release corresponds to each branch, and what date th
 - [#2451][2451] Show symbols defined to value 0 (start of file)
 - [#2533][2533] Fix installation on Python 3.5 and lower
 - [#2518][2518] fix: update apport coredump path handling for CorefileFinder
+- [#2552][2552] Fix memcpy shellcraft template off-by-one
 - [#2559][2559] Fix parsing corefile with missing auxv
 - [#2562][2562] Fix syntax highlighting of multiline comments in ASM
 - [#2565][2565] Exclude broken Unicorn
@@ -152,6 +154,7 @@ The table below shows which release corresponds to each branch, and what date th
 [2451]: https://github.com/Gallopsled/pwntools/pull/2451
 [2533]: https://github.com/Gallopsled/pwntools/pull/2533
 [2518]: https://github.com/Gallopsled/pwntools/pull/2518
+[2552]: https://github.com/Gallopsled/pwntools/pull/2552
 [2559]: https://github.com/Gallopsled/pwntools/pull/2559
 [2562]: https://github.com/Gallopsled/pwntools/pull/2562
 [2565]: https://github.com/Gallopsled/pwntools/pull/2565
