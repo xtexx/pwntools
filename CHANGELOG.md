@@ -122,6 +122,7 @@ The table below shows which release corresponds to each branch, and what date th
 - [#2502][2502] Fix loading ELF files without valid .dynamic section
 - [#2476][2476] Deprecate 'keepends' argument in favor of 'drop' in `tube.recvline*`
 - [#2364][2364] Deprecate direct commandline scripts invocation and exclude nonsense ones
+- [#2496][2496] Add linux ko file search support
 
 [2508]: https://github.com/Gallopsled/pwntools/pull/2508
 [2471]: https://github.com/Gallopsled/pwntools/pull/2471
@@ -140,6 +141,7 @@ The table below shows which release corresponds to each branch, and what date th
 [2502]: https://github.com/Gallopsled/pwntools/pull/2502
 [2476]: https://github.com/Gallopsled/pwntools/pull/2476
 [2364]: https://github.com/Gallopsled/pwntools/pull/2364
+[2496]: https://github.com/Gallopsled/pwntools/pull/2496
 
 ## 4.14.1 (`stable`)
 
