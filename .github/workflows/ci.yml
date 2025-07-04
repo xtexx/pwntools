@@ -108,13 +108,14 @@ jobs:
           elfutils \
           patchelf
 
+    # Print diagnostics to help when Corefile doctests fail.
     - name: Testing Corefiles
       run: |
         ulimit -a
         ulimit -c unlimited
         cat /proc/sys/kernel/core_pattern
         cat /proc/sys/kernel/core_uses_pid
-        ( cd $(mktemp -d); sh -c 'kill -11 $$' || true; ls -la ./*core* /var/crash/*.crash /var/lib/apport/coredump/core*) || true
+        ( cd $(mktemp -d); sh -c 'kill -11 $$' || true; ls -la ./*core* /var/crash/*.crash /var/lib/apport/coredump/core* || coredumpctl list sh) || true
 
     - name: Set up SSH
       run: |
