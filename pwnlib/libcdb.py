@@ -66,6 +66,8 @@ MAP_TYPES = {
 }
 
 DEBUGINFOD_SERVERS = [
+    'https://debuginfod.ubuntu.com/',
+    'https://debuginfod.debian.net/',
     'https://debuginfod.elfutils.org/',
 ]
 
