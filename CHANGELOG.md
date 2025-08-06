@@ -95,6 +95,7 @@ The table below shows which release corresponds to each branch, and what date th
 - [#2578][2578] Add gnome-terminal, Alacritty, Ttilix for run_in_new_terminal
 - [#2590][2590] Add support for finding corefiles under WSL2
 - [#2496][2496] Add linux ko file search support
+- [#2542][2542] Decode `_IO_*` flags in `FileStructure` member
 
 [2419]: https://github.com/Gallopsled/pwntools/pull/2419
 [2551]: https://github.com/Gallopsled/pwntools/pull/2551
@@ -116,6 +117,7 @@ The table below shows which release corresponds to each branch, and what date th
 [2578]: https://github.com/Gallopsled/pwntools/pull/2578
 [2590]: https://github.com/Gallopsled/pwntools/pull/2590
 [2496]: https://github.com/Gallopsled/pwntools/pull/2496
+[2542]: https://github.com/Gallopsled/pwntools/pull/2542
 
 ## 4.15.0 (`beta`)
 
