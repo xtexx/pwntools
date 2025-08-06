@@ -96,6 +96,7 @@ The table below shows which release corresponds to each branch, and what date th
 - [#2590][2590] Add support for finding corefiles under WSL2
 - [#2496][2496] Add linux ko file search support
 - [#2542][2542] Decode `_IO_*` flags in `FileStructure` member
+- [#2592][2592] pwnlib.config: Fix customization of `context.timeout`
 
 [2419]: https://github.com/Gallopsled/pwntools/pull/2419
 [2551]: https://github.com/Gallopsled/pwntools/pull/2551
@@ -118,6 +119,7 @@ The table below shows which release corresponds to each branch, and what date th
 [2590]: https://github.com/Gallopsled/pwntools/pull/2590
 [2496]: https://github.com/Gallopsled/pwntools/pull/2496
 [2542]: https://github.com/Gallopsled/pwntools/pull/2542
+[2592]: https://github.com/Gallopsled/pwntools/pull/2592
 
 ## 4.15.0 (`beta`)
 
