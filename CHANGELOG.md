@@ -150,6 +150,7 @@ The table below shows which release corresponds to each branch, and what date th
 - [#2593][2593] Use unicorn on macOS w/ SIP enabled
 - [#2587][2587] Support longer function names in Windows `getexport` shellcode
 - [#2596][2596] Ignore `colored_traceback` error when TERM envvar is unset
+- [#2579][2579] Fix poll error in `process.libs()` and clean up maps parsing
 
 [2545]: https://github.com/Gallopsled/pwntools/pull/2545
 [2567]: https://github.com/Gallopsled/pwntools/pull/2567
@@ -158,6 +159,7 @@ The table below shows which release corresponds to each branch, and what date th
 [2593]: https://github.com/Gallopsled/pwntools/pull/2593
 [2587]: https://github.com/Gallopsled/pwntools/pull/2587
 [2596]: https://github.com/Gallopsled/pwntools/pull/2596
+[2579]: https://github.com/Gallopsled/pwntools/pull/2579
 
 ## 4.14.1 (`stable`)
 
