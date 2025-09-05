@@ -1263,6 +1263,9 @@ class process(tube):
 
             >>> from pwn import *
             >>> p = process(['cat'])
+            >>> p.send(b'meow')
+            >>> p.recvuntil(b'meow')
+            b'meow'
             >>> libc_size = p.lib_size(p.libc.path)
             >>> hex(libc_size) # doctest: +SKIP
             '0x1d5000'
@@ -1359,7 +1362,12 @@ class process(tube):
         Example:
 
         >>> p = process("/bin/cat")
+        >>> p.send(b"meow")
+        >>> p.recvuntil(b"meow")
+        b'meow'
         >>> libc = p.libc
+        >>> libc is not None
+        True
         >>> libc # doctest: +SKIP
         ELF('/lib64/libc-...so')
         >>> p.close()
