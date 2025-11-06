@@ -1154,7 +1154,7 @@ class ELF(ELFFile):
         banner = self.string(self.symbols.linux_banner)
 
         # convert banner into a utf-8 string since re.search does not accept bytes anymore
-        banner = banner.decode('utf-8')
+        banner = banner.decode('utf-8', 'surrogateescape')
 
         # 'Linux version 3.18.31-gd0846ecc
         regex = r'Linux version (\S+)'
