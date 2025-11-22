@@ -106,6 +106,7 @@ The table below shows which release corresponds to each branch, and what date th
 - [#2639][2639] ROP: Remove stdout and argv workaround in ROPgadget invocation
 - [#2630][2630] support `preexec_fn` in `debug()`
 - [#2646][2646] fix(libcdb-cli): return early if no matched libc found
+- [#2629][2629] Add `terminate()` method to process class that sends SIGTERM
 
 [2638]: https://github.com/Gallopsled/pwntools/pull/2638
 [2627]: https://github.com/Gallopsled/pwntools/pull/2627
@@ -138,6 +139,7 @@ The table below shows which release corresponds to each branch, and what date th
 [2639]: https://github.com/Gallopsled/pwntools/pull/2639
 [2630]: https://github.com/Gallopsled/pwntools/pull/2630
 [2646]: https://github.com/Gallopsled/pwntools/pull/2646
+[2629]: https://github.com/Gallopsled/pwntools/pull/2629
 
 ## 4.15.0 (`stable`)
 
