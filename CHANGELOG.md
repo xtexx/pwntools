@@ -106,6 +106,7 @@ The table below shows which release corresponds to each branch, and what date th
 - [#2615][2615] tube/process: Fix redirecting stderr to stdout on Windows
 - [#2639][2639] ROP: Remove stdout and argv workaround in ROPgadget invocation
 - [#2630][2630] support `preexec_fn` in `debug()`
+- [#2641][2641] support preexec_args in process
 - [#2646][2646] fix(libcdb-cli): return early if no matched libc found
 - [#2629][2629] Add `terminate()` method to process class that sends SIGTERM
 
@@ -140,6 +141,7 @@ The table below shows which release corresponds to each branch, and what date th
 [2615]: https://github.com/Gallopsled/pwntools/pull/2615
 [2639]: https://github.com/Gallopsled/pwntools/pull/2639
 [2630]: https://github.com/Gallopsled/pwntools/pull/2630
+[2641]: https://github.com/Gallopsled/pwntools/pull/2641
 [2646]: https://github.com/Gallopsled/pwntools/pull/2646
 [2629]: https://github.com/Gallopsled/pwntools/pull/2629
 
