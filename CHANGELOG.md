@@ -112,6 +112,7 @@ The table below shows which release corresponds to each branch, and what date th
 - [#2629][2629] Add `terminate()` method to process class that sends SIGTERM
 - [#2643][2643] Refactor getdents.py, add support for SYS_getdents64
 - [#2647][2647] packing: Add `overlap` to overlap structures easily
+- [#2669][2669] asm: try native binutils before fallback architectures
 
 [2675]: https://github.com/Gallopsled/pwntools/pull/2675
 [2652]: https://github.com/Gallopsled/pwntools/pull/2652
@@ -148,8 +149,9 @@ The table below shows which release corresponds to each branch, and what date th
 [2641]: https://github.com/Gallopsled/pwntools/pull/2641
 [2646]: https://github.com/Gallopsled/pwntools/pull/2646
 [2629]: https://github.com/Gallopsled/pwntools/pull/2629
-[2638]: https://github.com/Gallopsled/pwntools/pull/2643
+[2643]: https://github.com/Gallopsled/pwntools/pull/2643
 [2647]: https://github.com/Gallopsled/pwntools/pull/2647
+[2669]: https://github.com/Gallopsled/pwntools/pull/2669
 
 ## 4.15.0 (`stable`)
 
