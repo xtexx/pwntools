@@ -736,7 +736,7 @@ def register_sizes(regs, in_sizes):
     return lists.concat(regs), sizes, bigger, smaller
 
 
-def _create_execve_script(argv=None, executable=None, cwd=None, env=None, ignore_environ=None,
+def _create_execve_script(argv=None, executable=None, cwd=None, env=None, which=None, ignore_environ=None,
         stdin=0, stdout=1, stderr=2, preexec_fn=None, preexec_args=(), aslr=None, setuid=None,
         shell=False, log=log):
     """
@@ -753,6 +753,8 @@ def _create_execve_script(argv=None, executable=None, cwd=None, env=None, ignore
             on :attr:`cwd` or set via :meth:`set_working_directory`.
         env(dict):
             Environment variables to add to the environment.
+        which(callable):
+            Function to find the path of a binary.
         ignore_environ(bool):
             Ignore default environment.  By default use default environment iff env not specified.
         stdin(int, str):
@@ -784,6 +786,9 @@ def _create_execve_script(argv=None, executable=None, cwd=None, env=None, ignore
     """
     if not argv and not executable:
         log.error("Must specify argv or executable")
+
+    if not which:
+        log.error("Must specify which_ parameter")
 
     aslr      = aslr if aslr is not None else context.aslr
 
@@ -826,9 +831,13 @@ def _create_execve_script(argv=None, executable=None, cwd=None, env=None, ignore
     func_src  = inspect.getsource(func).strip()
     setuid = True if setuid is None else bool(setuid)
 
-
+    # gdbserver wrappers are freezing on first execve syscall (for debugging the wanted program).
+    # It is not related to fork&exec.
+    # `/usr/bin/env python3` overrides first execve (because env is executing python3).
+    # Resolving python3 before shebang does, for not clashing with wrapper's first execve syscall.
+    python_path = which('python3')
     script = r"""
-#!/usr/bin/env python3
+#!%(python_path)s
 import os, sys, ctypes, resource, platform, stat
 from collections import OrderedDict
 try:
