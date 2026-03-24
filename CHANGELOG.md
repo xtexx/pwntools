@@ -119,6 +119,7 @@ The table below shows which release corresponds to each branch, and what date th
 - [#2687][2687] Add (un)pack shorthands for 40-56 bit numbers `u48()`/`p48()`
 - [#2699][2699] Fix `tty` and `raw` arguments in `ssh.process()`
 - [#2682][2682] Fix `server.close()` not closing the listen socket
+- [#2671][2671] ssh: support raw string input for 'key' argument as documented
 
 [2677]: https://github.com/Gallopsled/pwntools/pull/2677
 [2675]: https://github.com/Gallopsled/pwntools/pull/2675
@@ -164,6 +165,7 @@ The table below shows which release corresponds to each branch, and what date th
 [2687]: https://github.com/Gallopsled/pwntools/pull/2687
 [2699]: https://github.com/Gallopsled/pwntools/pull/2699
 [2682]: https://github.com/Gallopsled/pwntools/pull/2682
+[2671]: https://github.com/Gallopsled/pwntools/pull/2671
 
 ## 4.15.0 (`stable`)
 

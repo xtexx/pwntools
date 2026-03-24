@@ -9,6 +9,8 @@ import tempfile
 import threading
 import time
 
+from io import StringIO
+
 from pwnlib import term
 from pwnlib.context import context, LocalContext
 from pwnlib.exception import PwnlibException
@@ -631,6 +633,41 @@ class ssh(Timeout, Logger):
             >>> s2 = ssh(host='example.pwnme', proxy_sock=r1.sock)
             >>> r2 = s2.remote('localhost', 22) # and so on...
             >>> for x in r2, s2, r1, s1: x.close()
+
+        You can authenticate using a password, a private key, or an ssh agent.
+        By default the constructor will attempt to parse ``~/.ssh/config`` for configuration. You can disable this with ``ignore_config=True``.
+        
+        ::
+
+            >>> s = ssh(user='bandit0', host='bandit.labs.overthewire.org', password='bandit0', port=2220)
+
+        The private key can be passed as a string or as a file:
+
+        .. doctest::
+
+            >>> s = ssh(user='travis', host='example.pwnme', keyfile='~/.ssh/travis')
+            >>> s.whoami()
+            b'travis'
+            >>> s.close()
+
+            >>> s = ssh(user='travis', host='example.pwnme', key=open(os.path.expanduser('~/.ssh/travis')).read())
+            >>> s.whoami()
+            b'travis'
+            >>> s.close()
+
+        You have to wrap the key in a :class:`paramiko.pkey.PKey` object yourself if your key requires a password:
+
+        ::
+
+            >>> from paramiko import Ed25519Key
+            >>> from io import StringIO
+            >>> key_str = "..."  # some private key
+            >>> key = Ed25519Key.from_private_key(StringIO(key_str), password='somepassword')
+            >>> s = ssh(user='travis', host='example.pwnme', key=key, ignore_config=True)
+
+            >>> key = Ed25519Key.from_private_key(open(os.path.expanduser('~/.ssh/travis')), password='somepassword')
+            >>> s = ssh(user='travis', host='example.pwnme', key=key, ignore_config=True)
+
         """
         super(ssh, self).__init__(*a, **kw)
 
@@ -679,6 +716,22 @@ class ssh(Timeout, Logger):
                         keyfile = None
         except Exception as e:
             self.debug("An error occurred while parsing ~/.ssh/config:\n%s" % e)
+
+        # Create paramiko.PKey if key is provided as str or bytes
+        if isinstance(key, (str, bytes, bytearray)):
+            key = packing._need_text(key, 2)
+            file_object = StringIO(key)
+
+            for key_class in (paramiko.RSAKey, paramiko.ECDSAKey, paramiko.Ed25519Key):
+                try:
+                    file_object.seek(0)
+                    key = key_class.from_private_key(file_object)
+                    self.debug('SSH key string converted to paramiko.%s', type(key).__name__)
+                    break
+                except paramiko.SSHException:
+                    continue
+            else:
+                self.error('Could not convert key str to paramiko.PKey')
 
         keyfiles = [os.path.expanduser(keyfile)] if keyfile else []
 
