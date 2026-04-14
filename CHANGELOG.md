@@ -177,6 +177,14 @@ The table below shows which release corresponds to each branch, and what date th
 [2704]: https://github.com/Gallopsled/pwntools/pull/2704
 [2655]: https://github.com/Gallopsled/pwntools/pull/2655
 
+## 4.15.1
+
+- [#2694][2694] fix: pad bytes fields to correct field size in FileStructure
+- [#2701][2701] Fix `adb._build_date()` crash on devices with non-standard locale date strings
+
+[2694]: https://github.com/Gallopsled/pwntools/pull/2694
+[2701]: https://github.com/Gallopsled/pwntools/pull/2701
+
 ## 4.15.0 (`stable`)
 
 - [#2508][2508] Ignore a warning when compiling with asm on nix
