@@ -123,6 +123,7 @@ The table below shows which release corresponds to each branch, and what date th
 - [#2671][2671] ssh: support raw string input for 'key' argument as documented
 - [#2688][2688] Close SSH client connection when authentication failed
 - [#2686][2686] Add glibc safe-linking `glibc.reveal_ptr_same_page`
+- [#2706][2706] doc: Update `run_in_new_terminal` docstring with new overrides
 - [#2704][2704] ssh: Fix distro lookup on Ubuntu 24.04
 - [#2655][2655] Add `context.debugger` to select which debugger to use
 - [#2713][2713] Remove python-dateutil dependency
