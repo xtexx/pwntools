@@ -126,10 +126,10 @@ The table below shows which release corresponds to each branch, and what date th
 - [#2706][2706] doc: Update `run_in_new_terminal` docstring with new overrides
 - [#2704][2704] ssh: Fix distro lookup on Ubuntu 24.04
 - [#2655][2655] Add `context.debugger` to select which debugger to use
+- [#2689][2689] Refactor zsh completion script and deprecate `-e` in `pwn asm`
 - [#2713][2713] Remove python-dateutil dependency
 - [#2720][2720] ssh: resolve PermissionError on Windows during SFTP upload
 
-[2677]: https://github.com/Gallopsled/pwntools/pull/2677
 [2675]: https://github.com/Gallopsled/pwntools/pull/2675
 [2652]: https://github.com/Gallopsled/pwntools/pull/2652
 [2638]: https://github.com/Gallopsled/pwntools/pull/2638
@@ -179,6 +179,8 @@ The table below shows which release corresponds to each branch, and what date th
 [2686]: https://github.com/Gallopsled/pwntools/pull/2686
 [2704]: https://github.com/Gallopsled/pwntools/pull/2704
 [2655]: https://github.com/Gallopsled/pwntools/pull/2655
+[2677]: https://github.com/Gallopsled/pwntools/pull/2677
+[2689]: https://github.com/Gallopsled/pwntools/pull/2689
 [2713]: https://github.com/Gallopsled/pwntools/pull/2713
 [2720]: https://github.com/Gallopsled/pwntools/pull/2720
 
