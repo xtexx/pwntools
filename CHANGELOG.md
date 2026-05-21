@@ -133,6 +133,7 @@ The table below shows which release corresponds to each branch, and what date th
 - [#2720][2720] ssh: resolve PermissionError on Windows during SFTP upload
 - [#2702][2702] ssh: Don't cache username in ssh checksec output
 - [#2722][2722] safeeval: allow LIST_APPEND and SET_ADD opcodes (Python 3.14)
+- [#2730][2730] Fix atexception handlers in term mode
 
 [2675]: https://github.com/Gallopsled/pwntools/pull/2675
 [2652]: https://github.com/Gallopsled/pwntools/pull/2652
@@ -191,6 +192,7 @@ The table below shows which release corresponds to each branch, and what date th
 [2702]: https://github.com/Gallopsled/pwntools/pull/2702
 [2722]: https://github.com/Gallopsled/pwntools/pull/2722
 [2725]: https://github.com/Gallopsled/pwntools/pull/2725
+[2730]: https://github.com/Gallopsled/pwntools/pull/2730
 
 ## 4.15.1
 
